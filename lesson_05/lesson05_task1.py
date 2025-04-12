@@ -7,10 +7,12 @@ from selenium.webdriver.common.by import By
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 driver.maximize_window()
 
-driver.get("http://uitestingplayground.com/dynamicid")
-
-driver.find_element(By.CSS_SELECTOR, "button.btn.btn-primary").click()
+driver.get("http://uitestingplayground.com/classattr")
 
 
+driver.find_element(By.CSS_SELECTOR, "button.btn-primary").click()
+
+
+sleep(5)
 
 driver.quit()
