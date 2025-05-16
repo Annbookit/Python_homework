@@ -8,15 +8,15 @@ token_key = ""
 # авторизация в компании с логином и паролем, получение id компании и токена
 def test_getting_company_id():
     creds = {
-        "login": "sebast57945@gmail.com", # указать в кавычках нужный логин
-        "password": "Qa15052024" # указать в кавычках нужный пароль
+        "login": "", # указать в кавычках нужный логин
+        "password": "" # указать в кавычках нужный пароль
     }
     resp = requests.post(base_url + '/api-v2/auth/companies', json=creds)
     company_id = resp.json()["content"][0]["id"]  # получаем id компании
 
     auth_key = {
-        "login": "sebast57945@gmail.com",
-        "password": "Qa15052024",
+        "login": "",
+        "password": "",
         "companyId": company_id
     }
     resp = requests.post(base_url + '/api-v2/auth/keys', json=auth_key)
