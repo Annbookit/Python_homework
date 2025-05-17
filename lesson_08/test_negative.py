@@ -41,6 +41,6 @@ def test_edit():
 
 # находим нужный проек по id(отправить запрос без id нужного проекта)
 def test_find_id():
-    id = ""
+    id = " "
     resp = requests.get(base_url + '/api-v2/projects/'+ id, headers={'Authorization': f'Bearer {token_key}'})
-    assert resp.status_code == 400
+    assert resp.status_code == 404
