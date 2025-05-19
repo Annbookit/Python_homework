@@ -1,0 +1,15 @@
+from selenium.webdriver.common.by import By
+
+class AuthPage:
+
+    def __init__(self, driver):
+        """Открывается страница авторизации магазина"""
+        self._driver = driver
+        self._driver.get("https://www.saucedemo.com/")
+        self._driver.maximize_window()
+
+    def auth(self, user, pas):
+        """Ввод логина и пароля пользователя. Переход на страницу с товарами"""
+        self._driver.find_element(By.CSS_SELECTOR, "#user-name").send_keys(user)
+        self._driver.find_element(By.CSS_SELECTOR, "#password").send_keys(pas)
+        self._driver.find_element(By.CSS_SELECTOR, "#login-button").click()
